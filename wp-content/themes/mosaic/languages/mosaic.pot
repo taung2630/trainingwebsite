@@ -1,0 +1,574 @@
+# Copyright (C) 2013 WildWebLab
+# This file is distributed under the GPL.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mosaic 1.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/mosaic\n"
+"POT-Creation-Date: 2013-03-21 13:08:03+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:13 loop.php:25
+msgid "Not Found"
+msgstr ""
+
+#: 404.php:14
+msgid "Apologies, but the page you requested could not be found. Perhaps searching will help."
+msgstr ""
+
+#: admin/options-framework.php:171 admin/options-framework.php:366
+msgid "Theme Options"
+msgstr ""
+
+#: admin/options-framework.php:239
+msgid "Save Options"
+msgstr ""
+
+#: admin/options-framework.php:240
+msgid "Restore Defaults"
+msgstr ""
+
+#: admin/options-framework.php:240
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: admin/options-framework.php:272
+msgid "Default options restored."
+msgstr ""
+
+#: admin/options-framework.php:315
+msgid "Options saved."
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:26
+msgid "Theme Options Media"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:129
+msgid "Upload"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:152
+msgid "View File"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:289
+msgid "Gallery"
+msgstr ""
+
+#: admin/options-medialibrary-uploader.php:289
+msgid "Previously Uploaded"
+msgstr ""
+
+#: admin/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: admin/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: admin/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: admin/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: admin/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: admin/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: admin/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: admin/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: admin/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: admin/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: admin/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: admin/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: admin/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: admin/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: admin/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: admin/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: archive.php:29
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:31
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:33
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:35
+msgid "Blog Archives"
+msgstr ""
+
+#: author.php:28
+msgid "Author Archives: %s"
+msgstr ""
+
+#: category.php:17
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:25
+msgid "One Response"
+msgid_plural "%1$s Responses"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:53
+msgid "You must be logged in to post a comment."
+msgstr ""
+
+#: functions.php:113
+msgid "Primary Navigation"
+msgstr ""
+
+#: functions.php:151
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:236 functions.php:432 loop-attachment.php:76
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:295
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:307
+msgid "Header Right"
+msgstr ""
+
+#: functions.php:309
+msgid "This is the widget area in the header."
+msgstr ""
+
+#: functions.php:318
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:320
+msgid "The first footer widget area"
+msgstr ""
+
+#: functions.php:329
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:331
+msgid "The second footer widget area"
+msgstr ""
+
+#: functions.php:340
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:342
+msgid "The third footer widget area"
+msgstr ""
+
+#: functions.php:351
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:353
+msgid "The fourth footer widget area"
+msgstr ""
+
+#: functions.php:371
+msgid "Comment is awaiting moderation"
+msgstr ""
+
+#: functions.php:376
+msgid "Reply"
+msgstr ""
+
+#: functions.php:377 loop-page.php:40 shortcodes.php:467
+msgid "Edit"
+msgstr ""
+
+#: functions.php:434 loop-attachment.php:77 loop-page.php:39 loop-single.php:31
+msgid "Pages:"
+msgstr ""
+
+#: functions.php:692
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: functions.php:693
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: functions.php:850
+msgid "Basic Colors"
+msgstr ""
+
+#: functions.php:918
+msgid "Typography Colors"
+msgstr ""
+
+#: functions.php:1029
+msgid "Layout"
+msgstr ""
+
+#: loop-attachment.php:21
+msgid "Return to %s"
+msgstr ""
+
+#. translators: %s - title of parent post
+
+#: loop-attachment.php:23
+msgid "<span class=\"meta-nav\">&larr;</span> %s"
+msgstr ""
+
+#: loop-single.php:59
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: loop-single.php:60
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: loop.php:27
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr ""
+
+#: loop.php:52 loop.php:87 loop.php:88
+msgctxt "gallery category slug"
+msgid "gallery"
+msgstr ""
+
+#: loop.php:54 loop.php:75 loop.php:111
+msgid "Permalink to %s"
+msgstr ""
+
+#: loop.php:74
+msgid "This gallery contains <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] ""
+msgstr[1] ""
+
+#: loop.php:85
+msgid "View Galleries"
+msgstr ""
+
+#: loop.php:85 loop.php:88
+msgid "More Galleries"
+msgstr ""
+
+#: loop.php:88
+msgid "View posts in the Gallery category"
+msgstr ""
+
+#: loop.php:91 shortcodes.php:510
+msgid "Leave a comment"
+msgstr ""
+
+#: loop.php:91 shortcodes.php:510
+msgid "1 Comment"
+msgstr ""
+
+#: loop.php:91 shortcodes.php:510
+msgid "% Comments"
+msgstr ""
+
+#: loop.php:97
+msgctxt "asides category slug"
+msgid "asides"
+msgstr ""
+
+#: options.php:39
+msgid "General"
+msgstr ""
+
+#: options.php:57
+msgid "Custom Logo"
+msgstr ""
+
+#: options.php:58
+msgid "Upload a logo, or specify an image URL directly."
+msgstr ""
+
+#: options.php:64
+msgid "Custom Favicon"
+msgstr ""
+
+#: options.php:65
+msgid "Upload a 16px x 16px Png / Gif / Ico image."
+msgstr ""
+
+#: options.php:71
+msgid "Pagination Style"
+msgstr ""
+
+#: options.php:82
+msgid "Advanced"
+msgstr ""
+
+#: options.php:87
+msgid "Post Content"
+msgstr ""
+
+#: options.php:98
+msgid "Show Featured Image On"
+msgstr ""
+
+#: options.php:112
+msgid "Featured Image Size"
+msgstr ""
+
+#: options.php:124 options.php:304
+msgid "Post Info"
+msgstr ""
+
+#: options.php:125
+msgid "Data above the content of blog post."
+msgstr ""
+
+#: options.php:132 options.php:316
+msgid "Post Meta"
+msgstr ""
+
+#: options.php:133
+msgid "Data below each blog post."
+msgstr ""
+
+#: options.php:140
+msgid "Footer Copyright"
+msgstr ""
+
+#: options.php:141
+msgid "Left side of the footer."
+msgstr ""
+
+#: options.php:148
+msgid "Footer Credit"
+msgstr ""
+
+#: options.php:149
+msgid "Right side of the footer."
+msgstr ""
+
+#: options.php:156
+msgid "Header Scripts"
+msgstr ""
+
+#: options.php:157
+msgid "Enter scripts or code you would like output to wp_head()."
+msgstr ""
+
+#: options.php:164
+msgid "Footer Scripts"
+msgstr ""
+
+#: options.php:165
+msgid "Enter scripts or code you would like output to wp_footer()."
+msgstr ""
+
+#: options.php:172
+msgid "Styling"
+msgstr ""
+
+#: options.php:177
+msgid "Body Background"
+msgstr ""
+
+#: options.php:178
+msgid "Pick a custom color for body background or add a image."
+msgstr ""
+
+#: options.php:187
+msgid "Header Background"
+msgstr ""
+
+#: options.php:188
+msgid "Pick a custom color for header background or add a image."
+msgstr ""
+
+#: options.php:201
+msgid "Footer Background"
+msgstr ""
+
+#: options.php:202
+msgid "Pick a custom color for footer background or add a image."
+msgstr ""
+
+#: options.php:215
+msgid "Link Color"
+msgstr ""
+
+#: options.php:216
+msgid "Pick a custom color for links."
+msgstr ""
+
+#: options.php:223
+msgid "Link Hover Color"
+msgstr ""
+
+#: options.php:224
+msgid "Pick a custom color for hover links."
+msgstr ""
+
+#: options.php:231
+msgid "Custom CSS"
+msgstr ""
+
+#: options.php:232
+msgid "Add custom CSS code."
+msgstr ""
+
+#: options.php:239
+msgid "Typography"
+msgstr ""
+
+#: options.php:244
+msgid "General Font"
+msgstr ""
+
+#: options.php:256
+msgid "Site Title"
+msgstr ""
+
+#: options.php:268
+msgid "Site Tagline"
+msgstr ""
+
+#: options.php:280
+msgid "Navigation"
+msgstr ""
+
+#: options.php:292
+msgid "Post Title"
+msgstr ""
+
+#: options.php:328
+msgid "Widget Title"
+msgstr ""
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:24
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:26
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr ""
+
+#: shortcodes.php:345
+msgid "<h4>Related Posts</h4>"
+msgstr ""
+
+#: shortcodes.php:370
+msgid "<li>No related posts found</li>"
+msgstr ""
+
+#: shortcodes.php:426
+msgid "View all posts by %s"
+msgstr ""
+
+#: shortcodes.php:480
+msgid "Tagged with "
+msgstr ""
+
+#: shortcodes.php:496
+msgid "Posted in "
+msgstr ""
+
+#: tag.php:14
+msgid "Tag Archives: %s"
+msgstr ""
+#. Theme Name of the plugin/theme
+msgid "Mosaic"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://wildweblab.com/theme/mosaic"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Mosaic is a clean, lightweight and fully responsive theme. The theme option panel include three layout choices, custom logo, backgrounds, colors, typography and more."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WildWebLab"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wildweblab.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Left Sidebar"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Right Sidebar"
+msgstr ""

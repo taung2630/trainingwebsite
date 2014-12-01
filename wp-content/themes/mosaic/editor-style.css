@@ -1,0 +1,120 @@
+body#tinymce.wp-editor { 
+	color: #575757;
+	font: normal 15px georgia;
+	line-height: 150%; 
+}
+
+a {color: #62A6E4;}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500; 
+	margin-bottom: 10px;
+}
+	
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font-weight: inherit;
+	text-decoration: none;
+}	
+
+h1 {font-size: 2.0em; line-height: 140%;}
+h2 {font-size: 1.8em; line-height: 130%;}
+h3 {font-size: 1.6em; line-height: 130%;}
+h4 {font-size: 1.4em; line-height: 125%;}
+h5 {font-size: 1.2em; line-height: 120%;}
+h6 {font-size: 1.0em; line-height: 120%;}
+
+.subheader { color: #777; }
+.normal {font-weight: normal;}
+.bolder {font-weight: bolder;}
+
+p { margin: 0 0 20px 0; }
+p img { margin: 0; }
+p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+em { font-style: italic; }
+strong { font-weight: bold; }
+small { font-size: 80%; }
+	
+/*	Blockquotes  */
+blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+blockquote cite { display: block; font-size: 12px; color: #555; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+/* #Lists
+================================================== */
+	ul, ol { margin: 0 0 20px 30px; }
+	ul { list-style: disc outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc {  }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 4px 0 5px 30px;}
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 6px; }
+	li { padding-top: 12px; }
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+	
+/* WP Captions */
+
+.wp-caption {
+	text-align: center;
+	padding: 5px;
+	margin: 10px 0;
+}
+
+
+.wp-caption {
+	border: 1px solid #fff;
+	background-color: #f6f6f6;
+	color: #666;
+	text-shadow: 1px 1px 0px #fff;
+	-webkit-box-shadow:1px 1px 6px #ddd;
+	-moz-box-shadow:1px 1px 6px #ddd;
+	box-shadow:1px 1px 6px #ddd;
+	position: relative;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 5px 0 0px 0;
+	margin: 0;
+}
+
+.wp-caption.alignleft {
+	margin: 0px 10px 0px 0px;
+}
+.wp-caption.alignright {
+	margin: 0px 0px 0px 10px;
+}
+/* @end */
+
+/* # Image Alignment Classes
+============================================================== */
+
+.alignright {
+	float: right;
+	margin: 0px 0px 10px 15px;
+}
+
+.alignleft {
+	float: left;
+	margin: 0px 15px 10px 0px;
+}
+.aligncenter {
+	display:block;
+	margin:0 auto;
+}
