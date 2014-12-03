@@ -18,36 +18,24 @@
  * @author Wild Web Lab - www.wildweblab.com 
  * @since Mosaic 1.0
  */
-
 /*-----------------------------------------------------------------------------------*/
 /* Set Proper Parent/Child theme paths for inclusion
 /*-----------------------------------------------------------------------------------*/
 define( 'MOSAIC_PARENT_DIR', get_template_directory() );
 define( 'MOSAIC_CHILD_DIR', get_stylesheet_directory() );
-
 define( 'MOSAIC_PARENT_URL', get_template_directory_uri() );
 define( 'MOSAIC_CHILD_URL', get_stylesheet_directory_uri() );
-
-
 /*-----------------------------------------------------------------------------------*/
 /* Initialize the Options Framework
 /* http://wptheming.com/options-framework-theme/
 /*-----------------------------------------------------------------------------------*/
-
 define( 'OPTIONS_FRAMEWORK_URL', MOSAIC_PARENT_URL . '/admin/' );
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', MOSAIC_PARENT_DIR . '/admin/' );
-
 require_once( OPTIONS_FRAMEWORK_DIRECTORY . 'options-framework.php' );
-
-
 // Include Theme Options
 require_once( MOSAIC_PARENT_DIR . '/options.php' );
-
-
 // Include Shordcodes
 require_once( MOSAIC_PARENT_DIR . '/shortcodes.php' );
-
-
 /**
  * Enqueue scripts and styles
  */
@@ -65,8 +53,6 @@ function mosaic_header_scripts() {
 	wp_enqueue_script( 'mosaic-superfish', get_template_directory_uri() . "/javascripts/superfish.js", array('jquery'), $version, true );
 }
 add_action( 'wp_enqueue_scripts', 'mosaic_header_scripts' );
-
-
 /**
  * Enqueue comment reply script
  */
@@ -76,8 +62,6 @@ function mosaic_comment_reply_script() {
 	}
 }
 add_action( 'comment_form_before', 'mosaic_comment_reply_script' );
-
-
 /**
  * Add custom Favicon
  */
@@ -87,32 +71,23 @@ function mosaic_custom_favicon() {
 	}
 }
 add_action( 'wp_head', 'mosaic_custom_favicon' );
-
-
-
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * @since Mosaic 1.0
  */
 function mosaic_setup() {
-
 	if ( ! isset( $content_width ) ) $content_width = 640;
-
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
-
 	add_theme_support( 'post-thumbnails' );
-
 	add_editor_style( 'editor-style.css' );
-
 	add_image_size( 'large', 640, 640 );
 	
 	// Register the available menus
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation', 'mosaic' ),
 	));
-
 	/**
 	 *	Make theme available for translation
 	 *	Translations can be filed in the /languages/ directory
@@ -120,8 +95,6 @@ function mosaic_setup() {
 	load_theme_textdomain( 'mosaic', MOSAIC_PARENT_DIR . '/languages' );
 }
 add_action( 'after_setup_theme', 'mosaic_setup' );
-
-
 /**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
@@ -130,27 +103,20 @@ add_action( 'after_setup_theme', 'mosaic_setup' );
  */
 function mosaic_wp_title( $title, $sep ) {
 	global $paged, $page;
-
 	if ( is_feed() )
 		return $title;
-
 	// Add the blog name.
 	$title .= get_bloginfo( 'name' );
-
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		$title = "$title $sep $site_description";
-
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'mosaic' ), max( $paged, $page ) );
-
 	return $title;
 }
 add_filter( 'wp_title', 'mosaic_wp_title', 10, 2 );
-
-
 /** 
  * Add Viewport meta tag for mobile browsers 
  *
@@ -160,8 +126,6 @@ function mosaic_viewport_meta_tag() {
     echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n";
 }
 add_action( 'wp_head', 'mosaic_viewport_meta_tag', 1 );
-
-
 /**
  * Add IE conditional html5 shim to header
  *
@@ -179,8 +143,6 @@ function mosaic_html5_shim() {
     }
 }
 add_action( 'wp_print_scripts', 'mosaic_html5_shim' );
-
-
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
@@ -203,8 +165,6 @@ function mosaic_admin_header_style() {
 	</style>
 	<?php
 }
-
-
 /**
  * Sets the post excerpt length to 110 characters.
  *
@@ -218,9 +178,6 @@ function mosaic_excerpt_length( $length ) {
 	return 110;
 }
 add_filter( 'excerpt_length', 'mosaic_excerpt_length' );
-
-
-
 /**
  * Returns a "Continue Reading" link for excerpts
  *
@@ -231,8 +188,6 @@ function mosaic_continue_reading_link() {
 	global $post;
 	return ' <p><a href="'. get_permalink() . '#more-' . $post->ID . '" class="more-link">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'mosaic' ) . '</a></p>';
 }
-
-
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and mosaic_continue_reading_link().
  *
@@ -246,8 +201,6 @@ function mosaic_auto_excerpt_more( $more ) {
 	return ' &hellip;' . mosaic_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'mosaic_auto_excerpt_more' );
-
-
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
  *
@@ -264,8 +217,6 @@ function mosaic_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'mosaic_custom_excerpt_more' );
-
-
 /**
  * Removes inline styles printed when the gallery shortcode is used.
  *
@@ -275,8 +226,6 @@ add_filter( 'get_the_excerpt', 'mosaic_custom_excerpt_more' );
  * @since Mosaic 1.0
  */
 add_filter( 'use_default_gallery_style', '__return_false' );
-
-
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
@@ -341,7 +290,6 @@ function mosaic_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
 	// Area 6, located in the footer. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Footer 4', 'mosaic' ),
@@ -354,8 +302,6 @@ function mosaic_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'mosaic_widgets_init' );
-
-
 /** Comment Styles */
 function mosaic_comments($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
@@ -375,8 +321,6 @@ function mosaic_comments($comment, $args, $depth) {
 		</div>
 <?php  
 }
-
-
 /**
  * Prints the thumbnail of a post if exists and is enabled in the Theme Options.
  * 
@@ -387,7 +331,6 @@ function mosaic_post_thumbnail() {
 		
 		$featured_image = of_get_option('featured_image');
 		$size = of_get_option('featured_image_size');
-
 		if( is_home() && $featured_image['front_page'] ||
 		is_archive() && $featured_image['archive_pages'] ||
 		is_search() && $featured_image['search_results'] ) :
@@ -401,15 +344,10 @@ function mosaic_post_thumbnail() {
 
 		<?php
 		elseif( is_single() && $featured_image['single_posts'] ) :
-
 			the_post_thumbnail($size);
-
 		endif;
-
 	endif;
 }
-
-
 /**
  * Prints The Excerpt or Full Content of a post depending on the theme settings.
  * 
@@ -431,9 +369,6 @@ function mosaic_post_content() {
 		</div><!-- .entry-content -->
 	<?php endif;
 }
-
-
-
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
@@ -442,8 +377,6 @@ function mosaic_post_content() {
 function mosaic_posted_on() {
 	echo do_shortcode(of_get_option('post_info'));
 }
-
-
 /**
  * Prints HTML with meta information for the current post (category, tags and permalink).
  *
@@ -452,29 +385,20 @@ function mosaic_posted_on() {
 function mosaic_posted_in() {
 	echo do_shortcode(of_get_option('post_meta'));
 }
-
-
 // Header Functions
-
 // Hook to add content before header
 function mosaic_above_header() {
 	do_action('mosaic_above_header');
 }
-
-
 // Primary Header Function
 function mosaic_header() {
 	do_action('mosaic_header');
 }
-
-
 // Opening #header div with flexible grid
 function mosaic_header_open() {
 	echo '<div id="header"><div class="inner container">';
 }
 add_action('mosaic_header','mosaic_header_open', 1);
-
-
 // Build the logo
 // Child Theme Override: child_logo();
 function mosaic_logo() {
@@ -491,8 +415,6 @@ function mosaic_logo() {
 	echo '<div id="logo">' . apply_filters ( 'child_logo' , $logo) . '</div>';
 }
 add_action('mosaic_header','mosaic_logo', 2);
-
-
 // Hookable theme option field to add add'l content to header
 // Child Theme Override: child_header_extras();
 function mosaic_header_extras() {
@@ -501,32 +423,23 @@ function mosaic_header_extras() {
 	echo  '</div>';
 }
 add_action('mosaic_header','mosaic_header_extras', 3);
-
-
 // Close Header
 function mosaic_header_close() {
 	echo "</div></div><!--/#header-->";
 }
 add_action('mosaic_header','mosaic_header_close', 4);
-
-
-
 // Hook to Add Content After Header
 function mosaic_below_header() {
 	do_action('mosaic_below_header');
 }
-
-
 // Generate select menu for mobile
 class mosaic_walker_nav_menu_dropdown extends walker_nav_menu {
     function start_lvl(&$output, $depth){
 		$indent = str_repeat("\t", $depth);
     }
-
     function end_lvl(&$output, $depth){
 		$indent = str_repeat("\t", $depth); 
     }
-
     function start_el(&$output, $item, $depth, $args){
 		$item->title = str_repeat("&nbsp;", $depth * 4) . $item->title;
 		$output .= '<option value="' . $item->url . '">' . $item->title . "</option>\n";
@@ -535,8 +448,6 @@ class mosaic_walker_nav_menu_dropdown extends walker_nav_menu {
     function end_el(&$output, $item, $depth){
     }
 }
-
-
 // Navigation (menu)
 function mosaic_navbar() {
 	echo '<div id="navigation"><div class="inner container">';
@@ -550,8 +461,6 @@ function mosaic_navbar() {
 	));
 	echo '</div></div><!--/#navigation-->';
 }
-
-
 // Before Content - mosaic_before_content($columns);
 // Child Theme Override: child_before_content();
 function mosaic_before_content($columns) {
@@ -584,15 +493,10 @@ function mosaic_before_content($columns) {
 	<div id="content" class="' . $columns . ' columns">
 	';
 }
-
-
-
 // After Content
 function mosaic_after_content() {
    	echo "\t\t</div><!-- /.columns (#content) -->\n";
 }
-
-
 // Before Sidebar - do_action('mosaic_before_sidebar')
 function before_sidebar($columns) {
 	// You can specify the number of columns in conditional statements
@@ -620,9 +524,6 @@ function before_sidebar($columns) {
 	echo '<div id="sidebar" class="'.$columns.' columns" role="complementary">';
 }
 add_action( 'mosaic_before_sidebar', 'before_sidebar');  
-
-
-
 // After Sidebar
 function after_sidebar() {
 	// Additional Content could be added here
@@ -633,8 +534,6 @@ function after_sidebar() {
 	';
 }
 add_action( 'mosaic_after_sidebar', 'after_sidebar');  
-
-
 // Before Footer
 function mosaic_before_footer() {
 	echo "</div><!--/#wrap.container-->"."\n";
@@ -643,10 +542,7 @@ function mosaic_before_footer() {
 	$class = ($footerwidgets == '0' ? 'noborder' : 'normal');
 	echo '<div class="clear"></div><div id="footer"><div class="inner container">';
 }
-
-
 // The Footer
-
 function mosaic_footer() {
 	//loads sidebar-footer.php
 	get_sidebar( 'footer' );
@@ -659,11 +555,8 @@ function mosaic_footer() {
 	}
 		
 	echo do_shortcode($footer_content);
-
 	echo '</div><!-- /#credits-wrap -->';
 }
-
-
 // After Footer
 function mosaic_after_footer() {
 	echo '</div>';
@@ -674,8 +567,6 @@ function mosaic_after_footer() {
 		echo $footer_scripts;
 	}
 }
-
-
 /**
  * Post navigation
  */
@@ -695,8 +586,6 @@ function mosaic_pagination() {
 		}
 	}
 }
-
-
 /**
  * Generates Numbered Navigation
  */
@@ -770,14 +659,10 @@ function mosaic_numeric_pagination($before = '', $after = '') {
 	
 	echo '</div>'.$after."";
 }
-
-
 // Enable Shortcodes in excerpts and widgets
 add_filter('widget_text', 'do_shortcode');
 add_filter( 'the_excerpt', 'do_shortcode');
 add_filter('get_the_excerpt', 'do_shortcode');
-
-
 function get_image_path() {
 	global $post;
 	$id = get_post_thumbnail_id();
@@ -798,8 +683,6 @@ function get_image_path() {
 	$theimage = $thumbnail[0];
 	return $theimage;
 }
-
-
 /**
  * override default filter for 'textarea' sanitization.
  */ 
@@ -809,7 +692,6 @@ function optionscheck_change_santiziation() {
     remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
     add_filter( 'of_sanitize_textarea', 'mosaic_custom_sanitize_textarea' );
 }
-
 function mosaic_custom_sanitize_textarea($input) {
     global $allowedposttags;
 	
@@ -834,17 +716,13 @@ function mosaic_custom_sanitize_textarea($input) {
 	
     return $output;
 }
-
-
 /**
  * Add support for Theme Options in the Customizer
  */
 function mosaic_customize_register( $wp_customize ) {
 	$options = optionsframework_options();
-
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-
 	$wp_customize->add_section( 'colors', array(
 		'title'          => __( 'Basic Colors', 'mosaic' ),
 		'priority'       => 35,
@@ -857,7 +735,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_background[color]', array(
 		'label'    => $options['body_background']['name'],
 		'section'  => 'colors',
@@ -872,7 +749,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'navigation_color', array(
 		'label'    => $options['navigation']['name'],
 		'section'  => 'colors',
@@ -888,7 +764,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_color', array(
 		'label'    => $options['link_color']['name'],
 		'section'  => 'colors',
@@ -903,7 +778,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
 		'label'    => $options['link_hover_color']['name'],
 		'section'  => 'colors',
@@ -925,7 +799,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'general_font_color', array(
 		'label'    => $options['general_font']['name'],
 		'section'  => 'typography_colors',
@@ -940,7 +813,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_title_color', array(
 		'label'    => $options['site_title']['name'],
 		'section'  => 'typography_colors',
@@ -955,7 +827,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_tagline_color', array(
 		'label'    => $options['site_tagline']['name'],
 		'section'  => 'typography_colors',
@@ -970,7 +841,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_title_color', array(
 		'label'    => $options['post_title']['name'],
 		'section'  => 'typography_colors',
@@ -985,7 +855,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_info_color', array(
 		'label'    => $options['post_info']['name'],
 		'section'  => 'typography_colors',
@@ -1000,7 +869,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'post_meta_color', array(
 		'label'    => $options['post_meta']['name'],
 		'section'  => 'typography_colors',
@@ -1015,7 +883,6 @@ function mosaic_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 		'capability'        => 'edit_theme_options',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'widget_title_color', array(
 		'label'    => $options['widget_title']['name'],
 		'section'  => 'typography_colors',
@@ -1048,8 +915,6 @@ function mosaic_customize_register( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'mosaic_customize_register' );
-
-
 /**
  * Add custom styling
  */
@@ -1135,14 +1000,10 @@ function mosaic_print_style() {
 	echo '<style type="text/css" id="custom-css">' . $style . '</style>';
 }
 add_action( 'wp_head', 'mosaic_print_style' );
-
-
 function mosaic_generate_font_css($options) {
 	$color = ($options['color']) ? 'color:' . $options['color'] : '';
 	return $color . ';font:' . $options['style'] . ' ' . $options['size'] . ' ' . $options['face'];
 }
-
-
 /**
  * Add custom CSS class to the <body> tag to change layout
  */
@@ -1156,14 +1017,10 @@ function mosaic_layout_classes( $existing_classes ) {
 		$classes[] = 'left-sidebar';
 	elseif ( 'content' == $layout )
 		$classes[] = 'no-sidebar';
-
 	$classes = apply_filters( 'mosaic_layout_classes', $classes, $layout );
-
 	return array_merge( $existing_classes, $classes );
 }
 add_filter( 'body_class', 'mosaic_layout_classes' );
-
-
 /**
  * Add custom scripts in header
  */
@@ -1173,3 +1030,24 @@ function mosaic_custom_header_scripts() {
 }
 add_action('wp_head', 'mosaic_custom_header_scripts');
 
+//
+// Modify registration form to include roles
+//
+add_action('user_register', 'register_role');
+
+function register_role($user_id, $password="", $meta=array()) {
+   $userdata = array();
+   $userdata['ID'] = $user_id;
+   $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
+   if ($userdata['role'] == 'A User') {
+      $userdata['role'] = 'subcriber';
+   }
+   if ($userdata['role'] == 'A Member') {
+      $userdata['role'] = 'contributor';
+   }
+
+   //only allow if user role is my_role
+   if (($userdata['role'] == "contributor") or ($userdata['role'] == "editor")){
+      wp_update_user($userdata);
+   }
+}
