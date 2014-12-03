@@ -4,24 +4,7 @@
 //
 // Modify registration form to include roles
 //
-add_action('user_register', 'register_role');
 
-function register_role($user_id, $password="", $meta=array()) {
-   $userdata = array();
-   $userdata['ID'] = $user_id;
-   $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
-   if ($userdata['role'] == 'A User') {
-      $userdata['role'] = 'subscriber';
-   }
-   if ($userdata['role'] == 'A Member') {
-      $userdata['role'] = 'contributor';
-   }
-
-   //only allow if user role is my_role
-   if (($userdata['role'] == "subscriber") or ($userdata['role'] == "contributor")){
-      wp_update_user($userdata);
-   }
-}
 
 /**
  *
@@ -100,6 +83,25 @@ add_action( 'wp_head', 'mosaic_custom_favicon' );
  *
  * @since Mosaic 1.0
  */
+add_action('user_register', 'register_role');
+
+function register_role($user_id, $password="", $meta=array()) {
+   $userdata = array();
+   $userdata['ID'] = $user_id;
+   $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
+   if ($userdata['role'] == 'A User') {
+      $userdata['role'] = 'subscriber';
+   }
+   if ($userdata['role'] == 'A Member') {
+      $userdata['role'] = 'contributor';
+   }
+
+   //only allow if user role is my_role
+   if (($userdata['role'] == "subscriber") or ($userdata['role'] == "contributor")){
+      wp_update_user($userdata);
+   }
+}
+
 function mosaic_setup() {
 	if ( ! isset( $content_width ) ) $content_width = 640;
 	// Add default posts and comments RSS feed links to head
