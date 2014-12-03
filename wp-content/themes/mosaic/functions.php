@@ -1,4 +1,28 @@
 <?php
+
+
+//
+// Modify registration form to include roles
+//
+add_action('user_register', 'register_role');
+
+function register_role($user_id, $password="", $meta=array()) {
+   $userdata = array();
+   $userdata['ID'] = $user_id;
+   $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
+   if ($userdata['role'] == 'A User') {
+      $userdata['role'] = 'subscriber';
+   }
+   if ($userdata['role'] == 'A Member') {
+      $userdata['role'] = 'contributor';
+   }
+
+   //only allow if user role is my_role
+   if (($userdata['role'] == "subscriber") or ($userdata['role'] == "contributor")){
+      wp_update_user($userdata);
+   }
+}
+
 /**
  *
  * Layout Functions:
@@ -319,7 +343,9 @@ function mosaic_comments($comment, $args, $depth) {
 					<?php edit_comment_link(__('Edit','mosaic'),'  ',''); ?>
 			</div>
 		</div>
+        
 <?php  
+
 }
 /**
  * Prints the thumbnail of a post if exists and is enabled in the Theme Options.
@@ -1030,23 +1056,6 @@ function mosaic_custom_header_scripts() {
 }
 add_action('wp_head', 'mosaic_custom_header_scripts');
 
-
-
 add_action('user_register', 'register_role');
 
-function register_role($user_id, $password="", $meta=array()) {
-   $userdata = array();
-   $userdata['ID'] = $user_id;
-   $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
-   if ($userdata['role'] == 'A User') {
-      $userdata['role'] = 'subscriber';
-   }
-   if ($userdata['role'] == 'A Member') {
-      $userdata['role'] = 'contributor';
-   }
 
-   //only allow if user role is my_role
-   if (($userdata['role'] == "subscriber") or ($userdata['role'] == "contributor")){
-      wp_update_user($userdata);
-   }
-}
