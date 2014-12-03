@@ -1040,14 +1040,14 @@ function register_role($user_id, $password="", $meta=array()) {
    $userdata['ID'] = $user_id;
    $userdata['role'] = $_POST['cimy_uef_USERTYPE'];
    if ($userdata['role'] == 'A User') {
-      $userdata['role'] = 'subcriber';
+      $userdata['role'] = 'subscriber';
    }
    if ($userdata['role'] == 'A Member') {
       $userdata['role'] = 'contributor';
    }
 
    //only allow if user role is my_role
-   if (($userdata['role'] == "contributor") or ($userdata['role'] == "editor")){
+   if (($userdata['role'] == "subcriber") or ($userdata['role'] == "contributor")){
       wp_update_user($userdata);
    }
 }
