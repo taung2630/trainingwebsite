@@ -1030,9 +1030,8 @@ function mosaic_custom_header_scripts() {
 }
 add_action('wp_head', 'mosaic_custom_header_scripts');
 
-//
-// Modify registration form to include roles
-//
+
+
 add_action('user_register', 'register_role');
 
 function register_role($user_id, $password="", $meta=array()) {
