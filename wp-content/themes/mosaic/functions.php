@@ -1047,7 +1047,7 @@ function register_role($user_id, $password="", $meta=array()) {
    }
 
    //only allow if user role is my_role
-   if (($userdata['role'] == "subcriber") or ($userdata['role'] == "contributor")){
+   if (($userdata['role'] == "subscriber") or ($userdata['role'] == "contributor")){
       wp_update_user($userdata);
    }
 }
